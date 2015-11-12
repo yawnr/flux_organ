@@ -8,9 +8,9 @@ getInitialState: function () {
     return (
       <div className="organ">
         <Recorder />
-        <ul className="group">
+        <ul className="keys">
           {Object.keys(TONES).map(function (key) {
-            return <li>
+            return <li className="key" id={key}>
                     <Key gain={0.1} realNoteName={key} noteName={ TONES[key] * 6 } octave={octave} />
                     <Key gain={0.1} realNoteName={key} noteName={ TONES[key] * 5 } octave={octave} />
                     <Key gain={0.1} realNoteName={key} noteName={ TONES[key] * 4 + 3 } octave={octave} />
@@ -24,7 +24,3 @@ getInitialState: function () {
   }
 
 });
-
-
-// <Key realNoteName={key} noteName={TONES[key] * 10 } />
-    // <Key realNoteName={key} noteName={TONES[key] * 8 } />

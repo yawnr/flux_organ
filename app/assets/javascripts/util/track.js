@@ -22,7 +22,6 @@
 
       if (currentNote < this.roll.length) {
         if (Date.now() - playbackStartTime > this.roll[currentNote].timeSlice) {
-          console.log("hello");
           KeyActions.batchPress(this.roll[currentNote].notes);
           currentNote++;
         }
@@ -44,7 +43,6 @@
 
   Track.prototype.stopRecording = function () {
     this.addNotes([]);
-    console.log(this.roll);
   };
 
 

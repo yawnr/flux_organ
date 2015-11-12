@@ -1,48 +1,100 @@
-html, body, ul, li, h1, h3, div {
+html, body, div, h1, h3, li, ul, section, button {
   margin: 0;
-  padding: 0;
   border: 0;
+  padding: 0;
 
   font: inherit;
-  text-align: center;
   text-decoration: inherit;
+  text-align: inherit;
 
+  color: inherit;
   background: transparent;
-
 }
 
 .group:after {
   content: "";
-  display: block;
   clear: both;
-}
-
-div {
-  margin: auto;
-  text-align: center;
   display: block;
 }
-
-.organ {
-  margin: 0 auto;
-  display: block;
-}
-
 
 ul {
-  width: 500px;
-  margin: auto;
   list-style: none;
 }
 
-li {
-  float:left;
-  width: 50px;
+body {
+  font-family: futura;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 72px;
+  padding: 30px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: -5px;
+}
+
+#content {
+  width: 400px;
+  margin: auto;
+  background: black;
+}
+
+button {
+  width: 100px;
   height: 100px;
-  display: block;
+  margin: 5px;
+  margin-bottom: 40px;
+  font-size: 48px;
+  line-height: 50px;
+  transition: background 500ms, color 500ms;
+}
+
+.record {
+  background: red;
+}
+
+.stop {
+  background: #878787;
+}
+
+.play {
+  background: green;
+}
+
+.record:hover {
+  background: darkred;
+}
+
+.stop:hover {
+  background: #4e4e4e;
+}
+
+.play:hover {
+  background: darkgreen;
+}
+
+.keys {
+  margin: auto;
+}
+
+.key {
+  float: left;
+  height: 100px;
+  width: 40px;
   border: 2px solid black;
+  background: white;
+  color: black;
+}
+
+html {
+  height: 100%;
+  background: black;
 }
 
 .true {
-  background: yellow;
+  background: linear-gradient(lightblue, white);
 }

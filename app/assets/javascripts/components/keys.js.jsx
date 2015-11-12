@@ -21,10 +21,13 @@ var Key = React.createClass({
     if (KeyStore.all().indexOf(this.props.realNoteName) !== -1) {
       this.state.note.start(this.props.gain);
       this.setState({pressed: true});
+      var liCheck = "#" + this.props.realNoteName;
+      $(liCheck).addClass("true");
     } else {
       this.state.note.stop();
       this.setState({pressed: false});
-    }
+      var liCheck = "#" + this.props.realNoteName;
+      $(liCheck).removeClass("true");    }
   },
 
 
@@ -32,12 +35,12 @@ var Key = React.createClass({
   render: function () {
     var showNote = "";
     if (this.props.show) {
-      showNote = "♪";
+      showNote = this.props.realNoteName;
     }
     return (
-      <div className={this.state.pressed}>
+      <div>
         {showNote}
-    </div>
+      </div>
     );
   }
 
