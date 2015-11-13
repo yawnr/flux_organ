@@ -19,6 +19,18 @@ html, body, div, h1, h3, li, ul, section, button {
 
 ul {
   list-style: none;
+  height: 250px;
+  width: 800px;
+  position: relative;
+  margin: auto;
+  background-image: url("http://images3.campingworld.com/CampingWorld/images/products/3000/originals/woodgrain.jpg");
+}
+
+.allkeys {
+  position: absolute;
+  left: 79px;
+  top: 25px;
+
 }
 
 body {
@@ -38,7 +50,7 @@ h3 {
 }
 
 #content {
-  width: 400px;
+  width: 900px;
   margin: auto;
   background: black;
 }
@@ -83,11 +95,17 @@ button {
 
 .key {
   float: left;
-  height: 100px;
-  width: 40px;
+  height: 200px;
+  width: 60px;
   border: 2px solid black;
   background: white;
   color: black;
+}
+
+.sharp {
+  background: black;
+  width: 30px;
+  height: 170px;
 }
 
 html {
@@ -97,4 +115,50 @@ html {
 
 .true {
   background: linear-gradient(lightblue, white);
+}
+
+.true.sharp {
+  background: linear-gradient(lightblue, black);
+}
+
+#Csharp {
+  position: absolute;
+  bottom: 30px;
+  left: 47px;
+}
+
+#Dsharp {
+  position: absolute;
+  bottom: 30px;
+  left: 111px;
+}
+
+#Fsharp {
+  position: absolute;
+  bottom: 30px;
+  left: 239px;
+}
+
+#Gsharp {
+  position: absolute;
+  bottom: 30px;
+  left: 303px;
+}
+
+#Asharp {
+  position: absolute;
+  bottom: 30px;
+  left: 367px;
+}
+
+#C2sharp {
+  position: absolute;
+  bottom: 30px;
+  left: 495px;
+}
+
+#D2sharp {
+  position: absolute;
+  bottom: 30px;
+  left: 559px;
 }

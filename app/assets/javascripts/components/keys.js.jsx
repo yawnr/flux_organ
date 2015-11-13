@@ -39,7 +39,7 @@ var Key = React.createClass({
     }
     return (
       <div>
-        {showNote}
+            
       </div>
     );
   }

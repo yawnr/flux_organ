@@ -4,7 +4,7 @@
   var CHANGE_EVENT = "change";
 
   var KeyStore = window.KeyStore = $.extend({}, EventEmitter.prototype);
-  KeyStore.setMaxListeners(99);
+  KeyStore.setMaxListeners(500);
 
   KeyStore.addChangeHandler = function (callback) {
     this.on(CHANGE_EVENT, callback);
