@@ -11,6 +11,7 @@ var Recorder = React.createClass({
 
   pushedStop: function () {
     this.state.track.stopRecording();
+    // TrackStore.addTrack(this.state.track);
     KeyStore.removeChangeHandler(this.recordNotes);
     this.setState({isRecording: false});
   },
@@ -24,12 +25,37 @@ var Recorder = React.createClass({
     this.state.track.addNotes(keysPressed);
   },
 
+  recordingMessage: function () {
+    if (this.state.isRecording) {
+      return "Recording";
+    } else {
+      return "Press record!";
+    }
+  },
+
+  saveTrack: function (e) {
+    this.state.track.name = prompt("Please enter a title for this track");
+    this.state.track.save();
+  },
+
+  trackSavingElements: function () {
+    if (!this.state.isRecording && this.state.track.roll.length > 0) {
+      return (
+        <button onClick={this.saveTrack} className="control">
+          Save Track
+        </button>
+      );
+    }
+  },
+
   render: function () {
     return (
       <div>
+        <div>{this.recordingMessage()}</div>
         <button className="record" onClick={this.pushedRecord}>⦿</button>
         <button className="stop" onClick={this.pushedStop}>￭</button>
         <button className="play" onClick={this.pushedPlay}>►</button>
+        {this.trackSavingElements()}
       </div>
     );
   }

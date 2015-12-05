@@ -29,7 +29,7 @@
   };
 
   KeyStore.all = function () {
-    return _keysPlayed.slice(0);
+    return _keysPlayed.slice();
   };
 
   KeyStore.update = function (notes) {

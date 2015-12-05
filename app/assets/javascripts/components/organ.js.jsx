@@ -37,6 +37,9 @@ getInitialState: function () {
           })}
             </div>
           </ul>
+
+          <Jukebox />
+
         </div>
     );
   }
