@@ -23,7 +23,15 @@ ul {
   width: 800px;
   position: relative;
   margin: auto;
-  background-image: url("http://images3.campingworld.com/CampingWorld/images/products/3000/originals/woodgrain.jpg");
+}
+
+.moog {
+  background-repeat: no-repeat;
+  width: 1096px;
+  height: 920px;
+  background-position: center center;
+  position: relative;
+  margin: auto;
 }
 
 .allkeys {
@@ -36,7 +44,7 @@ ul {
 body {
   font-family: futura;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 h1 {
@@ -50,9 +58,9 @@ h3 {
 }
 
 #content {
-  width: 900px;
+  width: 100%;
   margin: auto;
-  background: black;
+  background: white;
 }
 
 button {
@@ -91,74 +99,92 @@ button {
 
 .keys {
   margin: auto;
+  position: absolute;
+  bottom: 271px;
+  left: 311px;
 }
 
 .key {
+  opacity: 1;
   float: left;
-  height: 200px;
+  height: 350px;
   width: 60px;
-  border: 2px solid black;
+  border: 1px solid black;
   background: white;
   color: black;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -moz-box-shadow: inset 0px 10px 5px #2a2a2a;
+  -webkit-box-shadow: inset 0px 10px 5px #2a2a2a;
+  box-shadow: inset 0px 10px 5px #2a2a2a;
+}
+
+.allkeys .key:first-child {
+
 }
 
 .sharp {
   background: black;
-  width: 30px;
-  height: 170px;
+  width: 34px;
+  height: 186px;
+  -moz-box-shadow: -10px -10px 5px #2a2a2a;
+  -webkit-box-shadow: -10px -10px 5px #2a2a2a;
+  box-shadow: inset -10px -10px 5px #2a2a2a;
 }
 
 html {
   height: 100%;
-  background: black;
+  background: white;
 }
 
 .true {
+  opacity: 1;
   background: linear-gradient(lightblue, white);
 }
 
 .true.sharp {
+  opacity: 1;
   background: linear-gradient(lightblue, black);
 }
 
 #Csharp {
   position: absolute;
-  bottom: 30px;
-  left: 47px;
+  bottom: 160px;
+  left: 43px;
 }
 
 #Dsharp {
   position: absolute;
-  bottom: 30px;
-  left: 111px;
+  bottom: 160px;
+  left: 107px;
 }
 
 #Fsharp {
   position: absolute;
-  bottom: 30px;
-  left: 239px;
+  bottom: 160px;
+  left: 230px;
 }
 
 #Gsharp {
   position: absolute;
-  bottom: 30px;
-  left: 303px;
+  bottom: 160px;
+  left: 293px;
 }
 
 #Asharp {
   position: absolute;
-  bottom: 30px;
-  left: 367px;
+  bottom: 160px;
+  left: 355px;
 }
 
 #C2sharp {
   position: absolute;
-  bottom: 30px;
-  left: 495px;
+  bottom: 160px;
+  left: 479px;
 }
 
 #D2sharp {
   position: absolute;
-  bottom: 30px;
-  left: 559px;
+  bottom: 160px;
+  left: 541px;
 }

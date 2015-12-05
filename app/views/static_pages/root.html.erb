@@ -1,7 +1,12 @@
-<h1>Moog subPar</h1>
-
 <div id="content"></div>
 
 <script type="text/javascript">
+
+  window.subPar = window.subPar || {};
+
+  window.subPar.images = {
+    moog: "<%= image_path('moog2.png') %>"
+  };
+
   React.render(React.createElement(Organ), document.getElementById("content"));
 </script>
