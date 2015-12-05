@@ -6,9 +6,10 @@ var TrackPlayer = React.createClass({
 
   render: function () {
     return (
-      <div className="track">
-        <p className="track-name">{this.props.track.name}</p>
-        <button onClick={this.playClick}>Play</button>
+      <div className="track group">
+        <div className="track-name">{this.props.track.name}</div>
+        <div className="play-track-button" onClick={this.playClick}>Play</div>
+        <br/>
       </div>
     );
 

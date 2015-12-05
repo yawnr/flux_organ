@@ -10,7 +10,7 @@
 
   root.createOscillator = function (freq) {
     var osc = ctx.createOscillator();
-    osc.type = "sine";
+    osc.type = "sawtooth";
     osc.frequency.value = freq;
     osc.detune.value = 0;
     osc.start(ctx.currentTime);

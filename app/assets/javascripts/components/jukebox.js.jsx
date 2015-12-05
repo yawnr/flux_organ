@@ -16,11 +16,12 @@ var Jukebox = React.createClass({
   render: function () {
 
     return (
-      <div className="jukebox">
-        <h3>Tracks</h3>
-        {this.state.tracks.map(function (track) {
-          return <TrackPlayer key={track.id} track={track} />;
-        })}
+      <div className="jukebox" style={{backgroundImage: 'url(' + window.subPar.images.ipod + ')'}}>
+        <div className="jukebox-tracks">
+          {this.state.tracks.map(function (track) {
+            return <TrackPlayer key={track.id} track={track} />;
+          })}
+        </div>
       </div>
     );
   }

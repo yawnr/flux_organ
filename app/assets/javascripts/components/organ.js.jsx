@@ -37,10 +37,12 @@ getInitialState: function () {
             })}
               </div>
             </ul>
+          <div className="recording-stuff">
+            <Recorder />
+            <Jukebox />
+          </div>
           </div>
 
-        <Recorder />
-          <Jukebox />
 
         </div>
     );

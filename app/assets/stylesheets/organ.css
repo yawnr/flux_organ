@@ -20,18 +20,18 @@ html, body, div, h1, h3, li, ul, section, button {
 ul {
   list-style: none;
   height: 250px;
-  width: 800px;
+  width: 600px;
   position: relative;
   margin: auto;
 }
 
 .moog {
   background-repeat: no-repeat;
-  width: 1096px;
-  height: 920px;
+  width: 822px;
+  height: 573px;
   background-position: center center;
   position: relative;
-  margin: auto;
+  margin: 0;
 }
 
 .allkeys {
@@ -59,13 +59,12 @@ h3 {
 
 #content {
   width: 100%;
-  margin: auto;
   background: white;
 }
 
 button {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   margin: 5px;
   margin-bottom: 40px;
   font-size: 48px;
@@ -100,15 +99,15 @@ button {
 .keys {
   margin: auto;
   position: absolute;
-  bottom: 271px;
-  left: 311px;
+  bottom: 87px;
+  left: 211px;
 }
 
 .key {
   opacity: 1;
   float: left;
-  height: 350px;
-  width: 60px;
+  height: 260px;
+  width: 45px;
   border: 1px solid black;
   background: white;
   color: black;
@@ -119,17 +118,13 @@ button {
   box-shadow: inset 0px 10px 5px #2a2a2a;
 }
 
-.allkeys .key:first-child {
-
-}
-
 .sharp {
   background: black;
-  width: 34px;
-  height: 186px;
-  -moz-box-shadow: -10px -10px 5px #2a2a2a;
-  -webkit-box-shadow: -10px -10px 5px #2a2a2a;
-  box-shadow: inset -10px -10px 5px #2a2a2a;
+  width: 25px;
+  height: 170px;
+  -moz-box-shadow: -7px -7px 5px #2a2a2a;
+  -webkit-box-shadow: -7px -7px 5px #2a2a2a;
+  box-shadow: inset -7px -7px 5px #2a2a2a;
 }
 
 html {
@@ -138,53 +133,140 @@ html {
 }
 
 .true {
-  opacity: 1;
   background: linear-gradient(lightblue, white);
+  -moz-box-shadow: inset 0px 10px 5px #2a2a2a;
+  -webkit-box-shadow: inset 0px 10px 5px #2a2a2a;
+  box-shadow: inset 0px 10px 30px #2a2a2a;
 }
 
 .true.sharp {
-  opacity: 1;
+  -moz-box-shadow: inset 0px 10px 5px #2a2a2a;
+  -webkit-box-shadow: inset 0px 10px 5px #2a2a2a;
+  box-shadow: inset 0px 10px 30px #2a2a2a;
   background: linear-gradient(lightblue, black);
 }
 
 #Csharp {
   position: absolute;
-  bottom: 160px;
-  left: 43px;
+  bottom: 90px;
+  left: 34px;
 }
 
 #Dsharp {
   position: absolute;
-  bottom: 160px;
-  left: 107px;
+  bottom: 90px;
+  left: 81px;
 }
 
 #Fsharp {
   position: absolute;
-  bottom: 160px;
-  left: 230px;
+  bottom: 90px;
+  left: 175px;
 }
 
 #Gsharp {
   position: absolute;
-  bottom: 160px;
-  left: 293px;
+  bottom: 90px;
+  left: 222px;
 }
 
 #Asharp {
   position: absolute;
-  bottom: 160px;
-  left: 355px;
+  bottom: 90px;
+  left: 269px;
 }
 
 #C2sharp {
   position: absolute;
-  bottom: 160px;
-  left: 479px;
+  bottom: 90px;
+  left: 363px;
 }
 
 #D2sharp {
   position: absolute;
-  bottom: 160px;
-  left: 541px;
+  bottom: 90px;
+  left: 410px;
+}
+
+.organ {
+  width: 1110px;
+  margin: auto;
+  /*margin-top: 30px;*/
+}
+
+.recording-stuff {
+  position: absolute;
+  left: 850px;
+  top: 30px;
+}
+
+.recorder-ul {
+  background-position: center;
+  background-size: 250px;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 70px;
+}
+
+.recorder-ul li {
+  float: left;
+  margin-top: 10px;
+  opacity: .5;
+}
+
+.recorder-ul li:first-child {
+  margin-left: 35px;
+}
+
+.jukebox {
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 224px;
+  height: 370px;
+  font-family: 'VT323';
+  margin-top: 20px;
+}
+
+.jukebox-tracks {
+  position: absolute;
+  left: 60px;
+  top: 160px;
+  height: 120px;
+  width: 144px;
+  overflow: scroll;
+  background: linear-gradient(to right, #96afc6, #bccce4);
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 6px black;
+}
+
+.subpar-header {
+  font-size: 32px;
+  margin: 10px;
+}
+
+.track-name {
+  float: left;
+  width: 100px;
+  text-align: left;
+  height: 100%;
+}
+
+.play-track-button {
+  float: right;
+  cursor: pointer;
+}
+
+.track {
+  padding: 3px 6px;
+  width: 132px;
+  margin: auto;
+}
+
+.track:hover {
+  background: #000;
+}
+
+.track:hover > div {
+  color: #96afc6;
 }

@@ -41,9 +41,9 @@ var Recorder = React.createClass({
   trackSavingElements: function () {
     if (!this.state.isRecording && this.state.track.roll.length > 0) {
       return (
-        <button onClick={this.saveTrack} className="control">
+        <div onClick={this.saveTrack} className="control">
           Save Track
-        </button>
+        </div>
       );
     }
   },
@@ -52,10 +52,12 @@ var Recorder = React.createClass({
     return (
       <div>
         <div>{this.recordingMessage()}</div>
-        <button className="record" onClick={this.pushedRecord}>⦿</button>
-        <button className="stop" onClick={this.pushedStop}>￭</button>
-        <button className="play" onClick={this.pushedPlay}>►</button>
-        {this.trackSavingElements()}
+        <ul className="recorder-ul" style={{backgroundImage: 'url(' + window.subPar.images.recorder + ')'}}>
+          <li><button className="stop" onClick={this.pushedStop}>￭</button></li>
+          <li><button className="play" onClick={this.pushedPlay}>►</button></li>
+          <li><button className="record" onClick={this.pushedRecord}>⦿</button></li>
+          {this.trackSavingElements()}
+        </ul>
       </div>
     );
   }
