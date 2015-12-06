@@ -6,10 +6,16 @@
 
   window.subPar = window.subPar || {};
 
+  window.subPar.play = true;
+
+  window.subPar.waveform = 'sawtooth';
+
   window.subPar.images = {
     moog: "<%= image_path('moogsmall.png') %>",
     ipod: "<%= image_path('ipod.png') %>",
-    recorder: "<%= image_path('recorder.png') %>"
+    recorder: "<%= image_path('recorder.png') %>",
+    cord: "<%= image_path('cord.png') %>",
+    cordvert: "<%= image_path('cordvert.png') %>"
   };
 
   React.render(React.createElement(Organ), document.getElementById("content"));

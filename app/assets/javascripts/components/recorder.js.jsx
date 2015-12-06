@@ -4,16 +4,28 @@ var Recorder = React.createClass({
   },
 
   pushedRecord: function () {
-    this.state.track.startRecording();
-    KeyStore.addChangeHandler(this.recordNotes);
-    this.setState({isRecording: true});
+    if (this.state.isRecording) {
+      this.state.track.stopRecording();
+      KeyStore.removeChangeHandler(this.recordNotes);
+      this.setState({isRecording: false});
+    } else {
+      this.state.track.startRecording();
+      KeyStore.addChangeHandler(this.recordNotes);
+      this.setState({isRecording: true});
+    }
   },
 
   pushedStop: function () {
-    this.state.track.stopRecording();
-    // TrackStore.addTrack(this.state.track);
-    KeyStore.removeChangeHandler(this.recordNotes);
-    this.setState({isRecording: false});
+    if (!this.state.isRecording) {
+      window.subPar.play = false;
+      setTimeout(function () {
+        window.subPar.play = true;
+      }, 100);
+    } else {
+      this.state.track.stopRecording();
+      KeyStore.removeChangeHandler(this.recordNotes);
+      this.setState({isRecording: false});
+    }
   },
 
   pushedPlay: function () {
@@ -39,9 +51,9 @@ var Recorder = React.createClass({
   },
 
   trackSavingElements: function () {
-    if (!this.state.isRecording && this.state.track.roll.length > 0) {
+    if (!this.state.isRecording && this.state.track.roll[0] && this.state.track.roll[0].timeSlice) {
       return (
-        <div onClick={this.saveTrack} className="control">
+        <div onClick={this.saveTrack} className="control save-track">
           Save Track
         </div>
       );
@@ -51,11 +63,11 @@ var Recorder = React.createClass({
   render: function () {
     return (
       <div>
-        <div>{this.recordingMessage()}</div>
+        <div className="recording">{this.recordingMessage()}</div>
         <ul className="recorder-ul" style={{backgroundImage: 'url(' + window.subPar.images.recorder + ')'}}>
-          <li><button className="stop" onClick={this.pushedStop}>￭</button></li>
-          <li><button className="play" onClick={this.pushedPlay}>►</button></li>
-          <li><button className="record" onClick={this.pushedRecord}>⦿</button></li>
+          <li><button className="stop" onClick={this.pushedStop}></button></li>
+          <li><button className="play" onClick={this.pushedPlay}></button></li>
+          <li><button className="record" onClick={this.pushedRecord}></button></li>
           {this.trackSavingElements()}
         </ul>
       </div>

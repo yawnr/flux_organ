@@ -1,12 +1,19 @@
 var Organ = React.createClass({
-getInitialState: function () {
-  return {octave: 1};
-},
+
+  getInitialState: function () {
+    return {octave: 1};
+  },
+
+  onClick: function () {
+    window.subPar.waveform = 'sine';
+    this.setState({octave: 1});
+  },
 
   render: function () {
     octave = this.state.octave;
     return (
       <div className="organ">
+        <div onClick={this.onClick}>Use ▲ and ▼ arrows to change octaves.</div>
         <div className="moog" style={{backgroundImage: 'url(' + window.subPar.images.moog + ')'}}>
           <ul className="keys group">
             <div className="allkeys group">
@@ -38,6 +45,8 @@ getInitialState: function () {
               </div>
             </ul>
           <div className="recording-stuff">
+            <img src={window.subPar.images.cord} className="cord"/>
+            <img src={window.subPar.images.cordvert} className="cordvert"/>
             <Recorder />
             <Jukebox />
           </div>

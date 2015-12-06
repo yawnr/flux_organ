@@ -64,36 +64,40 @@ h3 {
 
 button {
   width: 50px;
-  height: 50px;
+  height: 30px;
   margin: 5px;
   margin-bottom: 40px;
   font-size: 48px;
   line-height: 50px;
-  transition: background 500ms, color 500ms;
+  transition: opacity 300ms;
+  cursor: pointer;
+  position: relative;
+  border-radius: 5px;
+  background: white;
+  opacity: 0;
 }
 
 .record {
-  background: red;
+  position: absolute;
+  right: 27px;
+  top: 15px;
 }
 
 .stop {
-  background: #878787;
+  position: absolute;
+  right: 164px;
+  top: 15px;
 }
 
 .play {
-  background: green;
+  position: absolute;
+  right: 95px;
+  top: 15px;
 }
 
-.record:hover {
-  background: darkred;
-}
-
-.stop:hover {
-  background: #4e4e4e;
-}
-
-.play:hover {
-  background: darkgreen;
+button:hover {
+  cursor: pointer;
+  opacity: .1;
 }
 
 .keys {
@@ -211,7 +215,6 @@ html {
 .recorder-ul li {
   float: left;
   margin-top: 10px;
-  opacity: .5;
 }
 
 .recorder-ul li:first-child {
@@ -269,4 +272,36 @@ html {
 
 .track:hover > div {
   color: #96afc6;
+}
+
+.play-track-button:hover {
+  color: #ccc !important;
+}
+
+.save-track {
+  position: absolute;
+  top: 80px;
+  left: 85px;
+  cursor: pointer;
+  transition: color 300ms;
+  font-weight: 900;
+}
+
+.save-track:hover {
+  color: green;
+}
+
+.cord {
+  position: absolute;
+  width: 100px;
+
+  top: 43px;
+  right: 209px;
+}
+
+.cordvert {
+  position: absolute;
+  top: 47px;
+  right: 190px;
+
 }

@@ -12,7 +12,7 @@
   };
 
   Track.prototype.play = function () {
-    
+
     if (this.intervalId) { return; }
 
     var playbackStartTime = Date.now();
@@ -21,7 +21,7 @@
 
     this.intervalId = setInterval(function () {
 
-      if (currentNote < this.roll.length) {
+      if (currentNote < this.roll.length && window.subPar.play) {
         if (Date.now() - playbackStartTime > this.roll[currentNote].timeSlice) {
           if (this.roll[currentNote].notes !== undefined) {
             KeyActions.batchPress(this.roll[currentNote].notes);
@@ -32,8 +32,9 @@
         }
       }
       else {
-        delete this.intervalId;
+        KeyActions.batchPress([]);
         clearInterval(this.intervalId);
+        delete this.intervalId;
       }
     }.bind(this), 1000/60);
 
