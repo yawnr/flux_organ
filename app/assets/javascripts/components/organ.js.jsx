@@ -5,6 +5,7 @@ var Organ = React.createClass({
   },
 
   changeWaveform: function (e) {
+    KeyActions.batchPress([]);
     $('.waveforms li').removeClass('active');
     window.subPar.waveform = e.target.textContent.toLowerCase();
     KeyActions.octaveChange(2);
