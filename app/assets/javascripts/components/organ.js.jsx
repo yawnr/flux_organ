@@ -4,16 +4,20 @@ var Organ = React.createClass({
     return {octave: 1};
   },
 
-  onClick: function () {
-    window.subPar.waveform = 'sine';
-    this.setState({octave: 1});
+  changeWaveform: function (e) {
+    $('.waveforms li').removeClass('active');
+    window.subPar.waveform = e.target.textContent.toLowerCase();
+    KeyActions.octaveChange(2);
+    KeyActions.octaveChange(0.5);
+    $(e.currentTarget).addClass('active');
   },
 
   render: function () {
     octave = this.state.octave;
+    waveform = window.subPar.waveform;
     return (
       <div className="organ">
-        <div onClick={this.onClick}>Use ▲ and ▼ arrows to change octaves.</div>
+        <div>Use ▲ and ▼ arrows to change octaves.</div>
         <div className="moog" style={{backgroundImage: 'url(' + window.subPar.images.moog + ')'}}>
           <ul className="keys group">
             <div className="allkeys group">
@@ -47,6 +51,15 @@ var Organ = React.createClass({
           <div className="recording-stuff">
             <img src={window.subPar.images.cord} className="cord"/>
             <img src={window.subPar.images.cordvert} className="cordvert"/>
+            <div className="tools">
+              <div>Change Waveform:</div>
+              <ul className="waveforms">
+                <li onClick={this.changeWaveform}>Sine</li>
+                <li onClick={this.changeWaveform} className="active">Sawtooth</li>
+                <li onClick={this.changeWaveform}>Square</li>
+                <li onClick={this.changeWaveform}>Triangle</li>
+              </ul>
+            </div>
             <Recorder />
             <Jukebox />
           </div>

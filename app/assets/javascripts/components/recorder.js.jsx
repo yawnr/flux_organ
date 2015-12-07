@@ -41,7 +41,7 @@ var Recorder = React.createClass({
     if (this.state.isRecording) {
       return "Recording";
     } else {
-      return "Press record!";
+      return "NotRecording";
     }
   },
 
@@ -63,7 +63,7 @@ var Recorder = React.createClass({
   render: function () {
     return (
       <div>
-        <div className="recording">{this.recordingMessage()}</div>
+        <div className={this.recordingMessage()}>{this.recordingMessage()}</div>
         <ul className="recorder-ul" style={{backgroundImage: 'url(' + window.subPar.images.recorder + ')'}}>
           <li><button className="stop" onClick={this.pushedStop}></button></li>
           <li><button className="play" onClick={this.pushedPlay}></button></li>

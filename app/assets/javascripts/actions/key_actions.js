@@ -7,6 +7,12 @@ window.KeyActions = {
     });
   },
 
+  waveformChange: function () {
+    AppDispatcher.dispatch({
+      eventType: 'WAVEFORM'
+    });
+  },
+
   keyPressed: function (noteName) {
     AppDispatcher.dispatch({
       eventType: 'KEY_PRESSED',

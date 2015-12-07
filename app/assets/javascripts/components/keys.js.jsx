@@ -18,15 +18,16 @@ var Key = React.createClass({
   },
 
   toggleNote: function () {
+    var liCheck;
     if (KeyStore.all().indexOf(this.props.realNoteName) !== -1) {
       this.state.note.start(this.props.gain);
       this.setState({pressed: true});
-      var liCheck = "#" + this.props.realNoteName;
+      liCheck = "#" + this.props.realNoteName;
       $(liCheck).addClass("true");
     } else {
       this.state.note.stop();
       this.setState({pressed: false});
-      var liCheck = "#" + this.props.realNoteName;
+      liCheck = "#" + this.props.realNoteName;
       $(liCheck).removeClass("true");    }
   },
 
@@ -38,8 +39,8 @@ var Key = React.createClass({
       showNote = this.props.realNoteName;
     }
     return (
-      <div>
-            
+      <div className={window.subPar.waveform}>
+
       </div>
     );
   }

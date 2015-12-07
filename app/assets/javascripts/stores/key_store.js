@@ -34,15 +34,16 @@
 
   KeyStore.update = function (notes) {
     _keysPlayed = notes;
-  },
+  };
 
   KeyStore.octaveX = function (multiplier) {
     if (!(multiplier)) {
       multiplier = 1;
     }
     octaveX = octaveX * multiplier;
+
     return octaveX;
-  },
+  };
 
   KeyStore.dispatcherToken = AppDispatcher.register(function (payload) {
     switch (payload.eventType) {
@@ -60,6 +61,9 @@
         break;
       case "OCTAVE":
         KeyStore.octaveX(payload.octaveX);
+        KeyStore.changed();
+        break;
+      case "WAVEFORM":
         KeyStore.changed();
         break;
     }

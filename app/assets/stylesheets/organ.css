@@ -303,5 +303,42 @@ html {
   position: absolute;
   top: 47px;
   right: 190px;
+}
 
+.waveforms {
+  width: 259px;
+  height: 30px;
+}
+
+.waveforms > li {
+  float: left;
+  padding: 5px;
+  cursor: pointer;
+  background: #eda22d;
+  margin: 4px;
+  border-radius: 5px;
+  transition: color 200ms;
+}
+
+.waveforms > li:not(.active):hover {
+  color: #fff;
+}
+
+.active {
+  color: #fff;
+}
+
+.tools {
+  position: absolute;
+  right: 0px;
+  top: -80px;
+  font-size: 14px;
+}
+
+.Recording {
+  color: red;
+}
+
+.NotRecording {
+  color: transparent;
 }
