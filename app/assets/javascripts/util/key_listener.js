@@ -37,7 +37,7 @@ var octaveMap = {
 
   $(document).on("keydown", function (e) {
     if (e.which === 38 || e.which === 40) {
-
+      KeyActions.batchPress([]);
       var octaveX = octaveMap[e.which];
       KeyActions.octaveChange(octaveX);
     }
